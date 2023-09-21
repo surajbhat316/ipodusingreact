@@ -1,6 +1,10 @@
+import IpodMainComponent from "./Components/IpodMainComponent/IpodMainComponent";
 function App() {
   return (
-    <h1>Hello There</h1>
+    <div>
+      <IpodMainComponent />
+    </div>
+    
   );
 }
 

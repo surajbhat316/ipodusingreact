@@ -1,0 +1,19 @@
+#menuList{
+    margin-left: -2rem;
+    width: 80%;
+    height: 80%;
+    font-size: larger;
+    color: black;
+}
+
+#menuList li{
+    margin: 1rem 0rem;
+}
+
+
+.active{
+    padding: 1rem;
+    background-color: blue;
+    color: white;
+    border-radius: 0.5rem;
+}

@@ -1,0 +1,37 @@
+button{
+    background-color: rgb(106, 79, 79);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+#btnContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#forwardBtn{
+    position: absolute;
+    left: 52.5%;
+    top: 28rem;
+}
+
+#backwardBtn{
+    position: absolute;
+    left: 41.5rem;
+    top: 28rem;
+}
+
+#selectBtn{
+    position: absolute;
+    left: 46rem;
+    top: 28rem;
+}
+
+#menuBtn{
+    position: absolute;
+    left: 46rem;
+    top: 24rem;
+}
+
