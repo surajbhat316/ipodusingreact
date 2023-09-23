@@ -104,5 +104,11 @@
 .selectBtn{
   position: relative;
   top: 22rem;
-  left: 4.5rem;
+  left: 6rem;
+}
+
+.menuBtn{
+  position: relative;
+  top: 18rem;
+  left: 2.7rem;
 }

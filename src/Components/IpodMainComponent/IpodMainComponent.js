@@ -20,12 +20,11 @@ import ZingTouch from "zingtouch";
 
 export default function IpodMainComponent() {
 
-  // const [rotationAngle , setRotationAngle] = useState(0);
-  // const [flag , setFlag] = useState(false);
-
   // const [state, dispatch] = useReducer(reducer, { selectedItemName:"songs" });
 
-  const [seletedItem, setSelectedItem] = useState({item: "Songs"});
+  const [seletedItem, setSelectedItem] = useState({item: "Albums"});
+  const [visibleList, setVisibleList] = useState("menuList");
+  const [angle, setAngle] = useState(0);
   const printAngle = (angle) =>{
     if(angle >=0 && angle <= 90){
       const activeItem = document.getElementsByClassName("active")[0];
@@ -59,6 +58,7 @@ export default function IpodMainComponent() {
         playlistsListItem.classList.add("active"); 
       }
     }
+    setAngle(angle);
     // if(angle >= state.rotationAngle){
     //   dispatch({type: "increment", payload: {flag: true, angle}});
     // }
@@ -84,15 +84,28 @@ export default function IpodMainComponent() {
     });
   });
 
-  const handleClick = ()=>{
+  const handleSelect = ()=>{
     const activeItem = document.getElementsByClassName("active")[0];
-    setSelectedItem({item: activeItem.textContent});
+    console.log(activeItem);
+    if(activeItem){
+      setSelectedItem({item: activeItem.textContent});
+      if(seletedItem.item === "Songs"){
+        setVisibleList("songsList");
+        setSelectedItem({item: ""});
+      }
+    }
+
+    
+  }
+
+  const handleMenuClick = ()=>{
+    setVisibleList("menuList");
   }
   return (
     <div>
         <div id='main'>
             <div id='menuAndScreen'>
-                <IpodMenuComponent />
+                <IpodMenuComponent angle={angle} visibleList={visibleList} />
                 <IpodScreenComponent selectedItem={seletedItem} />
             </div>
             <div id='dialComponent'>
@@ -106,7 +119,8 @@ export default function IpodMainComponent() {
                   <div id="output"></div>
                 </div>
                 <div style={{position: "relative", marginLeft: "-400px"}} id="interaction">
-                  <button className='selectBtn' onClick={handleClick}>Select</button>
+                  <button className='selectBtn' onClick={handleSelect}>Select</button>
+                  <button className='menuBtn' onClick={handleMenuClick}>Menu</button>
                 </div>
             </div>
         </div>
