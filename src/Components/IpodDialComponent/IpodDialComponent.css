@@ -4,33 +4,31 @@ button{
     padding: 0.5rem;
     border-radius: 1rem;
 }
-#btnContainer{
+/* #btnContainer{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-#forwardBtn{
+/* #forwardBtn{
     position: absolute;
-    left: 52.5%;
-    top: 28rem;
+    left: 170px
 }
 
 #backwardBtn{
     position: absolute;
-    left: 41.5rem;
-    top: 28rem;
+    left: 4px;
 }
 
 #selectBtn{
     position: absolute;
-    left: 46rem;
-    top: 28rem;
+    left: 4.7rem;
+    z-index: 4;
 }
 
 #menuBtn{
     position: absolute;
-    left: 46rem;
-    top: 24rem;
-}
+    top: -90px;
+    left: 4.7rem;
+} */

@@ -1,29 +1,21 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import './IpodMainComponent.css';
 import IpodScreenComponent from '../IpodScreenComponent/IpodScreenComponent';
 import IpodMenuComponent from '../IpodMenuComponent/IpodMenuComponent';
 import IpodDialComponent from '../IpodDialComponent/IpodDialComponent';
 import ZingTouch from "zingtouch";
 
-function reducer(state, action) {
-  if (action.type === 'increment') {
-    if(action.payload.flag){
-      return {
-        rotationAngle: action.payload.angle,
-        counter: (state.counter + 1),
-        flag: true
-      }
-    }
-    else{
-      return {
-        rotationAngle: action.payload.angle,
-        counter: (state.counter - 1),
-        flag: false
-      }
-    }
-  }
-  throw Error('Unknown action.');
-}
+// function reducer(state, action) {
+//   if (action.type === 'changeSelectedItem') {
+//     if(action.payload){
+//       console.log(action.payload);
+//       return {
+//         selectedItem : action.payload.item
+//       }
+//     }
+//   }
+//   throw Error('Unknown action.');
+// }
 
 
 export default function IpodMainComponent() {
@@ -31,21 +23,41 @@ export default function IpodMainComponent() {
   // const [rotationAngle , setRotationAngle] = useState(0);
   // const [flag , setFlag] = useState(false);
 
-  const [state, dispatch] = useReducer(reducer, { rotationAngle: 0, counter: 0, flag: false });
+  // const [state, dispatch] = useReducer(reducer, { selectedItemName:"songs" });
 
-
+  const [seletedItem, setSelectedItem] = useState({item: "Songs"});
   const printAngle = (angle) =>{
     if(angle >=0 && angle <= 90){
-      console.log("Songs");
+      const activeItem = document.getElementsByClassName("active")[0];
+      const songListItem = document.getElementsByClassName("songs")[0];
+      if(songListItem && activeItem){
+        activeItem.classList.remove("active");
+        songListItem.classList.add("active");
+      }
     }
     else if(angle >=91 && angle <= 180){
-      console.log("Albums");
+      const activeItem = document.getElementsByClassName("active")[0];
+      const albumListItem = document.getElementsByClassName("albums")[0];
+      if(albumListItem && activeItem){
+        activeItem.classList.remove("active");
+        albumListItem.classList.add("active"); 
+      }
     }
     else if(angle >=181 && angle <= 270){
-      console.log("Artists");
+      const activeItem = document.getElementsByClassName("active")[0];
+      const artistsListItem = document.getElementsByClassName("artists")[0];
+      if(artistsListItem && activeItem){
+        activeItem.classList.remove("active");
+        artistsListItem.classList.add("active"); 
+      }
     }
     else if(angle >=271 && angle <= 360){
-      console.log("Playlists");
+      const activeItem = document.getElementsByClassName("active")[0];
+      const playlistsListItem = document.getElementsByClassName("playlists")[0];
+      if(playlistsListItem && activeItem){
+        activeItem.classList.remove("active");
+        playlistsListItem.classList.add("active"); 
+      }
     }
     // if(angle >= state.rotationAngle){
     //   dispatch({type: "increment", payload: {flag: true, angle}});
@@ -71,24 +83,31 @@ export default function IpodMainComponent() {
       printAngle(Math.floor(e.detail.angle));
     });
   });
+
+  const handleClick = ()=>{
+    const activeItem = document.getElementsByClassName("active")[0];
+    setSelectedItem({item: activeItem.textContent});
+  }
   return (
     <div>
         <div id='main'>
             <div id='menuAndScreen'>
-                <IpodMenuComponent flag={state.flag} />
-                <IpodScreenComponent />
+                <IpodMenuComponent />
+                <IpodScreenComponent selectedItem={seletedItem} />
             </div>
             <div id='dialComponent'>
                 <IpodDialComponent printAngle={printAngle} />
                 <div id="wrapper">
                   <div id="rotate-container">
                     <div id="rotatable">
-                      <div>Rotate me</div>
+                      <div></div>
                     </div>
                   </div>
                   <div id="output"></div>
                 </div>
-                <div style={{marginLeft: "-400px"}} id="interaction"></div>
+                <div style={{position: "relative", marginLeft: "-400px"}} id="interaction">
+                  <button className='selectBtn' onClick={handleClick}>Select</button>
+                </div>
             </div>
         </div>
     </div>

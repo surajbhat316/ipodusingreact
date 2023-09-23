@@ -13,25 +13,14 @@ export default function IpodDialComponent(props) {
         // }, []);
 
     });
-  return (
-    <div>
-         {/* <button id='menuBtn'>
-            Menu
-        </button>
-        <button id='forwardBtn'>
-            Forward
-        </button>
-        <button id="selectBtn">
-            Select
-        </button>
-        <button id='backwardBtn'>
-            Back
-        </button> */}
-        <div id='btnContainer'>
-        </div>
-    </div>
 
-    
-    
-  )
+    return (
+        <div>
+            <div id='btnContainer'>
+            </div>
+        </div>
+
+        
+        
+    )
 }

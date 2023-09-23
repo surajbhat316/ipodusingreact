@@ -8,10 +8,10 @@ export default function IpodMenuComponent(props) {
   return (
     <div>
       <ul id='menuList' style={{listStyle: "none"}}>
-        <li className='active'>Songs</li>
-        <li>Albums</li>
-        <li>Artists</li>
-        <li>Playlistss</li>
+        <li className='list_item songs active'>Songs</li>
+        <li className='list_item albums'>Albums</li>
+        <li className='list_item artists'>Artists</li>
+        <li className='list_item playlists'>Playlists</li>
       </ul>
     </div>
   )
