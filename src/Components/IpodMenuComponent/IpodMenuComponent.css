@@ -1,7 +1,7 @@
 #menuList{
-    margin-left: -2rem;
-    width: 80%;
-    height: 80%;
+    margin-left: -1.5rem;
+    width: 90%;
+    height: 100%;
     font-size: larger;
     color: black;
 }
@@ -13,7 +13,7 @@
 
 .active{
     padding: 1rem;
-    background-color: blue;
+    background: linear-gradient(to left, lightgrey , grey);
     color: white;
     border-radius: 0.5rem;
 }

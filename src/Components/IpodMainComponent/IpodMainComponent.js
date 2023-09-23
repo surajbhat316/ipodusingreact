@@ -119,8 +119,8 @@ export default function IpodMainComponent() {
                   <div id="output"></div>
                 </div>
                 <div style={{position: "relative", marginLeft: "-400px"}} id="interaction">
-                  <button className='selectBtn' onClick={handleSelect}>Select</button>
-                  <button className='menuBtn' onClick={handleMenuClick}>Menu</button>
+                  <button style={{fontFamily: "monospace"}} className='selectBtn' onClick={handleSelect}>Select</button>
+                  <button style={{fontFamily: "monospace"}} className='menuBtn' onClick={handleMenuClick}>Menu</button>
                 </div>
             </div>
         </div>
