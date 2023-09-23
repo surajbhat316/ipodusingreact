@@ -3,7 +3,7 @@ import "./IpodScreenComponent.css";
 
 export default function IpodScreenComponent(props) {
   return (
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", fontSize: "larger"}}>
       <div>
         {props.selectedItem.item === "Songs"?"Click to view Song List" :
         (props.selectedItem.item ==="Song1" || props.selectedItem.item ==="Song2" || props.selectedItem.item ==="Song3" )?

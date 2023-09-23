@@ -116,3 +116,7 @@
 body{
   font-family: monospace; 
 }
+
+.mobileView{
+  display: none;
+}

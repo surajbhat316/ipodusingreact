@@ -1,0 +1,42 @@
+@media screen and (max-width: 480px) {
+
+    #main{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #dialComponent{
+        position: absolute;
+        top: 50%;
+    }
+
+    #wrapper{
+        margin-left: 5rem;
+    }
+
+    #interaction{
+        width: 200%;
+        z-index: 2;
+    }
+
+    .mobileView{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        top: 4rem;
+    }
+    .desktopVIew button{
+        display: none;
+    }
+
+    .selectBtnMobile{
+        position: relative;
+
+    }
+    .menuBtnMobile{
+        position: relative;
+        
+    }
+}

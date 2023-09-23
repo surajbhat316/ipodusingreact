@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import './IpodMainComponent.css';
+import"./media/IpodMainComponentmedia.css";
 import IpodScreenComponent from '../IpodScreenComponent/IpodScreenComponent';
 import IpodMenuComponent from '../IpodMenuComponent/IpodMenuComponent';
 import IpodDialComponent from '../IpodDialComponent/IpodDialComponent';
@@ -103,6 +104,11 @@ export default function IpodMainComponent() {
   }
   return (
     <div>
+        <div className='mobileView'>
+            <button style={{fontFamily: "monospace"}} className='selectBtnMobile' onClick={handleSelect}>Select</button>
+            <button style={{fontFamily: "monospace"}} className='menuBtnMobile' onClick={handleMenuClick}>Menu</button>
+        </div>
+
         <div id='main'>
             <div id='menuAndScreen'>
                 <IpodMenuComponent angle={angle} visibleList={visibleList} />
@@ -118,11 +124,12 @@ export default function IpodMainComponent() {
                   </div>
                   <div id="output"></div>
                 </div>
-                <div style={{position: "relative", marginLeft: "-400px"}} id="interaction">
+                <div className='desktopVIew' style={{position: "relative", marginLeft: "-400px"}} id="interaction">
                   <button style={{fontFamily: "monospace"}} className='selectBtn' onClick={handleSelect}>Select</button>
                   <button style={{fontFamily: "monospace"}} className='menuBtn' onClick={handleMenuClick}>Menu</button>
                 </div>
             </div>
+
         </div>
     </div>
 
