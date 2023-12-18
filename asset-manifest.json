@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.48ac827e.css",
-    "main.js": "/static/js/main.1c6683ae.js",
-    "index.html": "/index.html",
-    "main.48ac827e.css.map": "/static/css/main.48ac827e.css.map",
-    "main.1c6683ae.js.map": "/static/js/main.1c6683ae.js.map"
+    "main.css": "/ipodusingreact/static/css/main.48ac827e.css",
+    "main.js": "/ipodusingreact/static/js/main.1c6683ae.js",
+    "index.html": "/ipodusingreact/index.html",
+    "main.48ac827e.css.map": "/ipodusingreact/static/css/main.48ac827e.css.map",
+    "main.1c6683ae.js.map": "/ipodusingreact/static/js/main.1c6683ae.js.map"
   },
   "entrypoints": [
     "static/css/main.48ac827e.css",
